@@ -35,6 +35,7 @@ function geniss {
     echo "Generando archivo "${issfile}
     mkdir -p ./output
     sed \
+        -e "s/\${sourcedir}/${sourcedir}/" \
         -e "s/\${project}/${project}/" \
         -e "s/\${pubname}/${pubname}/" \
         -e "s/\${puburl}/${puburl}/" \
