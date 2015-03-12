@@ -22,6 +22,12 @@ function getrepo {
     fi
 }
 
+function getver {
+    cd ./admin-cfdi
+    version=`git describe --tags`
+    cd ..
+}
+
 function geniss {
     mkdir -p ./output
     cp -f ./template/admincfdi.iss ./output/admincfdi-${version}.iss
@@ -29,4 +35,5 @@ function geniss {
 
 loadconfig
 getrepo
+getver
 geniss
