@@ -22,17 +22,17 @@ function getrepo {
     fi
 }
 
-function getver {
+function setvars {
     cd ./admin-cfdi
     version=`git describe --tags`
     cd ..
+    guid=`uuidgen`
 }
 
 function geniss {
     issfile=./output/admincfdi-${version}.iss
     template=./template/admincfdi.iss
     echo "Generando archivo "${issfile}
-    guid=`uuidgen`
     mkdir -p ./output
     sed \
         -e "s/\${version}/${version}/" \
@@ -43,5 +43,5 @@ function geniss {
 
 loadconfig
 getrepo
-getver
+setvars
 geniss
