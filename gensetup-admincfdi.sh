@@ -14,4 +14,10 @@ function getrepo {
     fi
 }
 
+function geniss {
+    mkdir -p ./output
+    cp -f ./template/admincfdi.iss ./output/admincfdi-${version}.iss
+}
+
 getrepo
+geniss
