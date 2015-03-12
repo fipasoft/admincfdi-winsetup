@@ -30,8 +30,8 @@ function setvars {
 }
 
 function geniss {
-    issfile=./output/admincfdi-${version}.iss
-    template=./template/admincfdi.iss
+    issfile=./output/${project}-${version}.iss
+    template=./template/app.iss
     echo "Generando archivo "${issfile}
     mkdir -p ./output
     sed \
