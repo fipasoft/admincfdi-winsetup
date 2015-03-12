@@ -30,6 +30,7 @@ function getver {
 
 function geniss {
     echo "Generando archivo ./output/admincfdi-${version}.iss"
+    guid=`uuidgen`
     mkdir -p ./output
     cp -f ./template/admincfdi.iss ./output/admincfdi-${version}.iss
 }
