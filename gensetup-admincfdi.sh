@@ -1,5 +1,13 @@
 #!/bin/bash
-repo='https://github.com/linuxcabal/admin-cfdi'
+
+function loadconfig {
+    source ./config
+    if [ -s ${repo} ]
+    then
+        "Error al leer la configuracion"
+        exit 1
+    fi
+}
 
 function getrepo {
     if [ ! -f ./admin-cfdi/admincfdi.py ]
@@ -19,5 +27,6 @@ function geniss {
     cp -f ./template/admincfdi.iss ./output/admincfdi-${version}.iss
 }
 
+loadconfig
 getrepo
 geniss
