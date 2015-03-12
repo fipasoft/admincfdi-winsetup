@@ -4,7 +4,7 @@ function loadconfig {
     source ./config
     if [ -s ${repo} ]
     then
-        "Error al leer la configuracion"
+        echo "Error al leer la configuracion"
         exit 1
     fi
 }
