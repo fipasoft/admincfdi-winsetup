@@ -1,1 +1,4 @@
 repo='https://github.com/linuxcabal/admin-cfdi'
+project="admincfdi"
+pubname='Universo Libre - PythonCabal'
+puburl='https:\/\/github.com\/linuxcabal\/admin-cfdi'
