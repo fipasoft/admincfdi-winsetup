@@ -1,5 +1,7 @@
 #!/bin/bash
+repo='https://github.com/linuxcabal/admin-cfdi'
+
 if [ ! -f ./admin-cfdi/admincfdi.py ]
 then
-    git clone https://github.com/linuxcabal/admin-cfdi
+    git clone ${repo}
 fi
