@@ -10,20 +10,20 @@ function loadconfig {
 }
 
 function getrepo {
-    if [ ! -f ./admin-cfdi/admincfdi.py ]
+    if [ ! -d ./app/.git ]
     then
         echo "Clonando "${repo}
-        git clone ${repo}
+        git clone ${repo} app
     else
         echo "Actualizando desde "${repo}
-        cd ./admin-cfdi
+        cd ./app
         git pull origin master
         cd ..
     fi
 }
 
 function setvars {
-    cd ./admin-cfdi
+    cd ./app
     version=`git describe --tags`
     cd ..
     guid=`uuidgen`
