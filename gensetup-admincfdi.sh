@@ -51,7 +51,7 @@ function build {
     sumfile=./output/${project}-${version}-sha256sum.txt
     (Xvfb :10 -ac&) 2> "/tmp/Xvfb.log"
     [ -f "$issfile" ] && issfile=$(winepath -w "$issfile")
-    wine "C:\Program Files (x86)\Inno Setup 5\ISCC.exe" "$issfile" "/q"
+    wine "${innopath}" "$issfile" "/q"
     killall Xvfb
     sha256sum ${exefile} > ${sumfile}
 }
