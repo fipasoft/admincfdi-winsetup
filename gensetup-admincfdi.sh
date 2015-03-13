@@ -47,10 +47,13 @@ function geniss {
 
 function build {
     DISPLAY=:10
+    exefile=./output/${project}-${version}.exe
+    sumfile=./output/${project}-${version}-sha256sum.txt
     (Xvfb :10 -ac&) 2> "/tmp/Xvfb.log"
     [ -f "$issfile" ] && issfile=$(winepath -w "$issfile")
     wine "C:\Program Files (x86)\Inno Setup 5\ISCC.exe" "$issfile" "/q"
     killall Xvfb
+    sha256sum ${exefile} > ${sumfile}
 }
 
 loadconfig
