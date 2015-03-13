@@ -45,7 +45,16 @@ function geniss {
     > ${issfile}
 }
 
+function build {
+    DISPLAY=:10
+    (Xvfb :10 -ac&) 2> "/tmp/Xvfb.log"
+    [ -f "$issfile" ] && issfile=$(winepath -w "$issfile")
+    wine "C:\Program Files (x86)\Inno Setup 5\ISCC.exe" "$issfile" "/q"
+    killall Xvfb
+}
+
 loadconfig
 getrepo
 setvars
 geniss
+build
