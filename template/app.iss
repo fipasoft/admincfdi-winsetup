@@ -2,7 +2,7 @@
 #define MyAppVersion "${version}"
 #define MyAppPublisher "${pubname}"
 #define MyAppURL "${puburl}"
-#define MyAppExeName "app\${project}.py"
+#define MyAppExeName "${project}.py"
 
 [Setup]
 AppId={{${guid}}
