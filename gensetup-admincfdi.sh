@@ -14,10 +14,19 @@ function getrepo {
     then
         echo "Clonando "${repo}
         git clone ${repo} app
+        if [ ${branch} != 'master' ]
+        then
+            cd ./app
+            git fetch
+            git checkout --track origin/${branch}
+            git pull origin
+            cd ..
+        fi
     else
         echo "Actualizando desde "${repo}
         cd ./app
-        git pull origin master
+        git checkout ${branch}
+        git pull origin
         cd ..
     fi
 }

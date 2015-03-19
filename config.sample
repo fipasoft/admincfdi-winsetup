@@ -1,4 +1,5 @@
 repo='https://github.com/linuxcabal/admin-cfdi'
+branch='master'
 
 sourcedir='C:\\admincfdi-winsetup\\'
 project="admincfdi"
