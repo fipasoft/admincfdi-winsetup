@@ -48,6 +48,7 @@ function geniss {
         -e "s/\${project}/${project}/" \
         -e "s/\${pubname}/${pubname}/" \
         -e "s/\${puburl}/${puburl}/" \
+        -e "s/\${entrypoint}/${entrypoint}/" \
         -e "s/\${version}/${version}/" \
         -e "s/\${guid}/${guid}/" \
         ${template} \
