@@ -29,6 +29,7 @@ Name: "quicklaunchicon"; Description: "{cm:CreateQuickLaunchIcon}"; GroupDescrip
 
 [Files]
 Source: "app\*"; DestDir: "{app}"; Permissions: users-full; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "skel\app\*"; DestDir: "{app}"; Permissions: users-full; Flags: onlyifdoesntexist ignoreversion recursesubdirs createallsubdirs
 
 [Icons]
 Name: "{group}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"
