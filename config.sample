@@ -1,8 +1,10 @@
 repo='https://github.com/linuxcabal/admin-cfdi'
+branch='master'
 
 sourcedir='C:\\admincfdi-winsetup\\'
 project="admincfdi"
 pubname='Universo Libre - PythonCabal'
 puburl='https:\/\/github.com\/linuxcabal\/admin-cfdi'
+entrypoint='admincfdi.py'
 
 innopath='C:\\Program Files (x86)\\Inno Setup 5\\ISCC.exe'
