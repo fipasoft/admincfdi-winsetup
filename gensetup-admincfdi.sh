@@ -39,10 +39,11 @@ function setvars {
 }
 
 function geniss {
-    issfile=./output/${project}-${version}.iss
+    releasedir=./release/${version}
+    issfile=${releasedir}/${project}-${version}.iss
     template=./template/app.iss
     echo "Generando archivo "${issfile}
-    mkdir -p ./output
+    mkdir -p ${releasedir}
     sed \
         -e "s/\${sourcedir}/${sourcedir}/" \
         -e "s/\${project}/${project}/" \
@@ -57,12 +58,13 @@ function geniss {
 
 function build {
     DISPLAY=:10
-    exefile=./output/${project}-${version}.exe
-    sumfile=./output/${project}-${version}-sha256sum.txt
+    exefile=${releasedir}/${project}-${version}.exe
+    sumfile=${releasedir}/${project}-${version}-sha256sum.txt
     (Xvfb :10 -ac&) 2> "/tmp/Xvfb.log"
     [ -f "$issfile" ] && issfile=$(winepath -w "$issfile")
     wine "${innopath}" "$issfile" "/q"
     killall Xvfb
+    mv ./Output/${project}-${version}.exe ${exefile}
     sha256sum ${exefile} > ${sumfile}
 }
 
